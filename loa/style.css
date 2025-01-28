@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh; /* Para que el loader esté completamente centrado */
+    background-color: #121212; /* Fondo oscuro para resaltar el loader */
+}
+
+.loader {
+    width: 150px;
+    height: 150px;
+    border: 15px solid #000; /* Borde exterior */
+    border-top: 15px solid cyan; /* Color del borde superior para animar */
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite; /* Animación de rotación */
+    position: relative;
+}
+
+.line {
+    width: 20px;
+    height: 20px;
+    background-color: cyan;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+/* Animaciones */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, -20px);
+    }
+}
